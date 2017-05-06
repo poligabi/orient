@@ -1,0 +1,41 @@
+#Chi-quadrado tabela de contigência#
+
+## Inserir dados no R no formato abaixo:
+> counts <- read.table(file = "clipboard", sep = "\t", header=TRUE)
+> counts
+                id        comport     item    seg  
+                j1        pe          in
+                j1        tp          fr
+                j2        pe          in
+                j2        tp          fr
+                j3        pe          in
+                j3        tp          fr
+1               
+
+# Criar tabela de contigência #
+> xtabs(seg ~ comport+id, data=counts)
+                    
+                    
+  *Lembrar de nomear para que possa ser chamada no futuro*
+  > tabelac <- xtabs(seg ~ comport+id, data=counts)
+
+# Teste chi-quadrado #
+> chisq.test(tabelac)
+
+# Deu significante? ( ) 
+*Agora tens que descobrir quais resultados estão tornando a diferença significativa (causando a interferência)*
+*Então dê esse novo nome "chires" ao seu teste para usar no teste de resíduo ajustado a baixo*
+> chires <- chisq.test(tabelac)
+
+## Resíduo ajustado (igual ao esperado: Hipótese nula): -3=< Raj >= +3 (referência)[http://www.daleidoscope.com/chispssr/]
+> (chires$observed - chires$expected)/sqrt(chires$expected *
+((1 - rowSums(chires$observed)/sum(chires$observed)) 
+%*% t(1 - colSums(chires$observed)/sum(chires$observed))))
+
+### Com essa primeira leva, verás se algum comportamento esta sendo realizado mais por determinado indivíduo.
+
+### Agora farás o mesmo procedimento para ver se há diferença no que eles comem relacionada a idade:
+> tabelai <- xtabs(seg ~ item+id, data=counts)
+> chires <- chisq.test(tabelai)
+
+### Agora verás que comportamento é mais usado para manipular cada item em cada idade, para isso 
