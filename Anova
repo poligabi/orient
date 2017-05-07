@@ -5,3 +5,29 @@ copie e cole nomeaando seus dados como por exemplo: "dados"
 > J2 = subset(dados, dados$idade == "j2")
 > J3 = subset(dados, dados$idade == "j3")
 
+# One-way ANOVA # 
+## testing Value against Group
+
+#Para fazer o teste de Anova aqui, sua variável independente é Group (idade), e a variável dependente é valor Value (escolha um comportamento).
+aov <- aov(Value ~ Group, data)
+summary(aov)
+
+*então nos seus dados ficaria assim:
+> ov <- aov(dados$LOC ~ dados$idade, dados)
+> summary(ov)  # mostra o resultado
+
+## Usando a função model.tables(), você pode olhar os resultados a nível individual.
+> model.tables(ov, type='effects') # quanto efeito cada um tem
+> model.tables(ov, type='means') # médias para cada grupo e média geral
+
+## Como olhar diferenças individuais nos dados (teste post-hoc):
+> TukeyHSD(ov)  or  TukeyHSDaov(dados$LOC ~ dados$idade, dados)) # que te darás:
+ * diferença entre as médias; 
+ * menor e maior valor do nível de 95% do intervalo de cofiança ao redor da diferemça da média.
+ * Valor-P que diz se a diferença é significaticamente diferente de zero.
+
+ ## Plotar resultados
+ > comparisons <- TukeyHSD(ov)
+ > plot(comparisons, las=1)
+ 
+ *Copie e salve tudo no excel e depois repita esse processo nos próximos comportamentos.
