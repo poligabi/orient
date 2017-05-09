@@ -1,9 +1,9 @@
-copie e cole nomeaando seus dados como por exemplo: "dados"
+copie e cole nomeaando seus dados como por exemplo: "TCC"
 
 ## Criar 2 ou mais subgrupos dentro dos dados (j1, j2, j3)
-> J1 = subset(dados, dados$idade == "j1")
-> J2 = subset(dados, dados$idade == "j2")
-> J3 = subset(dados, dados$idade == "j3")
+> igj1 = subset(TCC, TCC$ID == "Juvenil 1")
+> igj2 = subset(TCC, TCC$ID == "Juvenil 2")
+> igj3 = subset(TCC, TCC$ID == "Juvenil 2")
 
 # One-way ANOVA # 
 ## testing Value against Group
