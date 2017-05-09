@@ -1,0 +1,45 @@
+# Antes de tudo copie e cole estes dois codigos:
+library(Hmisc)
+library(ggplot2)
+
+ #copia e cola tabela de dados do excel
+ TCC <- read.table(file = "clipboard", sep = "\t", header=TRUE)
+
+*dados tem que estar nesse formato:
+      ID      Comportamento     media     erro
+      j1        LOF           
+# divida os subgrupos que vais comparar (juv 1 , juv 2 , juv 3) e então vamos trabalhar.
+
+#### Grafico erro simples (x = Comportamento, y = Frequencia relativa media) ###
+
+
+qplot(TCC$Comportamento, TCC$J1)+geom_errorbar(aes(x=Comportamento, ymin= J1-erro, ymax=J1+erro), width=0.25)
+
+# o nome da variável que aparece no gráfico é dTCC$Comportamento, TCC$J1
+* gráfico gerado mostrará só os comportamentos do juvenil 1
+
+### Gráfico erro-bar agrupado (x= independente , y= dependente, z= diferentes idades) ###
+
+# Defina a diferença superior e e inferior do erro associado ao grafico:
+limits <- aes(ymax = TCC$media + TCC$erro,
+              ymin = TCC$media - TCC$media)
+
+# Como você irá sobrepor um grafico de barras a um grafico de erros agora terás que usar essa outra formula a seguir (todinha)
+
+p <- ggplot(data = TCC, aes(x = factor(Comportamento), y = media,
+               fill = factor(ID)))
+p + geom_bar(stat = "identity", colour="black",
+             position = position_dodge(0.9)) +
+  geom_errorbar(limits, position = position_dodge(0.9),
+                width = 0.25) +
+  labs(x = "ID", y = "media") +
+  ggtitle("Orçamento de atividades") +
+  scale_fill_discrete(name = "ID") +
+  scale_fill_manual(values=c("#080808","#cccccc","#FFFFFF")) +
+  theme_bw()
+  
+  *ggtitle = titulo do seu grafico
+  *scale_fill_manual = são as cores que aparecem no seu gafico, são esses codigos "#FFFFFF" que utilizei,
+  *theme_bw() = remove um fundo cinza que vem padrão
+  *podes excluir essas linhas finais se quiser e o R gerará um gráfico colorido aleatória
+  *podes escolher essas variações de cinza no site: http://www.colorhexa.com/cccccc
