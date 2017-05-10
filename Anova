@@ -3,7 +3,7 @@ copie e cole nomeaando seus dados como por exemplo: "TCC"
 ## Criar 2 ou mais subgrupos dentro dos dados (j1, j2, j3)
 > igj1 = subset(TCC, TCC$ID == "Juvenil 1")
 > igj2 = subset(TCC, TCC$ID == "Juvenil 2")
-> igj3 = subset(TCC, TCC$ID == "Juvenil 2")
+> igj3 = subset(TCC, TCC$ID == "Juvenil 3")
 
 # One-way ANOVA # 
 ## testing Value against Group
@@ -13,7 +13,7 @@ aov <- aov(Value ~ Group, data)
 summary(aov)
 
 *então nos seus dados ficaria assim:
-> ov <- aov(dados$LOC ~ dados$idade, dados)
+> ov <- aov(TCC$LOF ~ TCC$ID, TCC)
 > summary(ov)  # mostra o resultado
 
 ## Usando a função model.tables(), você pode olhar os resultados a nível individual.
@@ -21,7 +21,7 @@ summary(aov)
 > model.tables(ov, type='means') # médias para cada grupo e média geral
 
 ## Como olhar diferenças individuais nos dados (teste post-hoc):
-> TukeyHSD(ov)  or  TukeyHSDaov(dados$LOC ~ dados$idade, dados)) # que te darás:
+> TukeyHSD(ov)  or  TukeyHSDaov(CC$LOF ~ TCC$ID, TCC)) # que te darás:
  * diferença entre as médias; 
  * menor e maior valor do nível de 95% do intervalo de cofiança ao redor da diferemça da média.
  * Valor-P que diz se a diferença é significaticamente diferente de zero.
