@@ -18,7 +18,8 @@ qplot(TCC$Comportamento, TCC$J1)+geom_errorbar(aes(x=Comportamento, ymin= J1-err
 # o nome da variável que aparece no gráfico é dTCC$Comportamento, TCC$J1
 * gráfico gerado mostrará só os comportamentos do juvenil 1
 
-### Gráfico erro-bar agrupado (x= independente , y= dependente, z= diferentes idades) ###
+
+#### Gráfico erro-bar agrupado (x= independente , y= dependente, z= diferentes idades) ###
 
 # Defina a diferença superior e e inferior do erro associado ao grafico:
 limits <- aes(ymax = TCC$Media + TCC$Erro,
@@ -26,14 +27,14 @@ limits <- aes(ymax = TCC$Media + TCC$Erro,
 
 # Como você irá sobrepor um grafico de barras a um grafico de erros agora terás que usar essa outra formula a seguir (todinha)
 
-p <- ggplot(data = TCC, aes(x = factor(Comport), y = Media,
+p <- ggplot(data = TCC, aes(x = factor(Comportamento), y = Media,
                fill = factor(ID)))
 p + geom_bar(stat = "identity", colour="black",
              position = position_dodge(0.9)) +
   geom_errorbar(limits, position = position_dodge(0.9),
                 width = 0.25) +
   labs(x = "Comportamento", y = "Media") +
-  ggtitle("Orçamento de atividades") +
+  ggtitle("Orçamento de Atividades") +
   scale_fill_discrete(name = "ID") +
   scale_fill_manual(values=c("#080808","#cccccc","#FFFFFF")) +
   theme_bw()
