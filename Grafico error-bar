@@ -37,7 +37,7 @@ p + geom_bar(stat = "identity", colour="black",
   ggtitle("Orçamento de Atividades") +
   scale_fill_discrete(name = "ID") +
   theme_bw() +
-  scale_fill_manual(values=c("#080808","#cccccc","#FFFFFF"))
+  scale_fill_manual(values=c("blue","red","green3"))
   
   *labs = legendas dos eixos
   *ggtitle = titulo do seu grafico
