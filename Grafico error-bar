@@ -24,18 +24,23 @@ qplot(TCC$Comportamento, TCC$J1)+geom_errorbar(aes(x=Comportamento, ymin= J1-err
 # Defina a diferença superior e e inferior do erro associado ao grafico:
 limits <- aes(ymax = TCC$Media + TCC$Erro,
               ymin = TCC$Media - TCC$Erro)
+              
+#Para mostrar apenas o erro superior
+limits <- aes(
+  ymax = TCC$Media + (TCC$Media > 0)*TCC$Erro,  
+  ymin = TCC$Media - (TCC$Media < 0)*TCC$Erro)
 
 # Como você irá sobrepor um grafico de barras a um grafico de erros agora terás que usar essa outra formula a seguir (todinha)
 
 p <- ggplot(data = TCC, aes(x = factor(Comportamento), y = Media,
-               fill = factor(ID)))
+               fill = factor(Dureza)))
 p + geom_bar(stat = "identity", colour="black",
              position = position_dodge(0.9)) +
   geom_errorbar(limits, position = position_dodge(0.9),
                 width = 0.25) +
   labs(x = "Comportamento", y = "Media") +
-  ggtitle("Orçamento de Atividades") +
-  scale_fill_discrete(name = "ID") +
+  ggtitle("Manipulação total por nível de dureza dos itens alimentares") +
+  scale_fill_discrete(name = "Dureza") +
   theme_bw() +
   scale_fill_manual(values=c("blue","red","green3"))
   
