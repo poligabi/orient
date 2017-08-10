@@ -50,4 +50,4 @@ p + geom_bar(stat = "identity", colour="black",
   *theme_bw() = remove um fundo cinza que vem padrão
   # scale_y_continuous(limits=c(0,1), breaks=seq(0,1,0.2)) =estabele o limite do eixo y (0 ate 1) e segunda parte as subdivisões do eixo
   *podes excluir essas linhas finais se quiser e o R gerará um gráfico colorido aleatória
-  *podes escolher essas variações de cinza no site: http://www.colorhexa.com/cccccc
+  *podes escolher as cores no site: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf
