@@ -8,6 +8,8 @@
 # Parte 1 - Introdução ao R #
 #############################
 
+# https://www.r-bloggers.com/classes-and-objects-in-r/      <- para ler e melhorar aqui
+
 # https://pt.wikibooks.org/wiki/R_(linguagem_de_programa%C3%A7%C3%A3o)/Objetos
 # objeto = qualquer coisa que pode ser associado (e armazenado) em uma variável
 ## a criação de um objeto está associada a alocação de area na memória RAM
