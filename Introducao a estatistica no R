@@ -9,7 +9,8 @@
 #############################
 
 # https://pt.wikibooks.org/wiki/R_(linguagem_de_programa%C3%A7%C3%A3o)/Objetos
-# objeto = qualquer coisa que pode ser associado (e armazenado) em uma variável.
+# objeto = qualquer coisa que pode ser associado (e armazenado) em uma variável
+## a criação de um objeto está associada a alocação de area na memória RAM
 
 # As variáveis em R não são predefinidas; elas assumem o tipo do objeto que for atribuído a elas.
 # Assim, uma instrução do tipo:
@@ -19,6 +20,12 @@ x <- 2.5
 x <- NULL
 # Aqui, NULL é a variável vazia. x <- NULL não destrói x (como pode ser visto escrevendo-se exists("x") - que retorna TRUE), 
 ## mas faz x ter um valor que não é nada.
+
+## Em diferentes situações no R a informação de que uma variável ou informação está vazia pode aparecer:
+# Null quer dizer nulo, variavel vazia. Não há dados alocados naquela area de memoria. 
+# Empty é usado se for um tipo String e tu quizer saber se está "vazio" 
+# e " " é "vazio" string que nao tem nada e não é representado por nada
+
 
 # Os principais tipos de objeto são:
 
