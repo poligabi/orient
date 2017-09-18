@@ -23,6 +23,16 @@ iris[c1:10,15:20), c(1,5)] #Aqui mostramos linhas 1 a 10, 15 a20 e colunas 1 e 5
 # se função tem mais de uma linha precisa selecionar ambas anter do crtl R
 
 
+#######################
+# Importar dados no R #
+#######################
+
+# Copiar e colar tabela no R:
+x <- read.table(file = "clipboard", sep = "\t", header=TRUE)
+x
+
+
+
 ######################
 ## Graficos simples ## 
 ###################### 
@@ -60,6 +70,29 @@ legend("topleft", legend=especies,col=cores, pch=16, text.font=3) #legenda das c
 # Links para ir aprendendo a se virar #
 #######################################
 
-## Cheat Sheets de R: https://www.rstudio.com/resources/cheatsheets/
+# Cheat Sheets de R: https://www.rstudio.com/resources/cheatsheets/
 
-##
+
+## Para relizar se informar sobre novidades:
+
+# Cantinho do R (blog) : https://cantinhodor.wordpress.com/
+# Laboratório de Ecologia Quantitativa - UFAL : https://www.facebook.com/leq.ufal/
+
+
+## Para realizar pesquisas:
+
+# Google do R : http://rseek.org/ 
+# Directory of R packages by topic area : https://cran.r-project.org/web/views/ 
+# Search tool for R packages on CRAN : https://mran.microsoft.com/packages/ 
+# Guide to the best tools, resources and technologies for data visualization: http://dataviz.tools/
+
+
+## Para testar código quando estiver em um computador sem R:
+
+# Compilador de R : http://rextester.com/l/r_online_compiler
+
+
+[Livro de inferência estatística] (https://leanpub.com/LittleInferenceBook/read) 
+[OpenIntro Statistics Book] (https://drive.google.com/file/d/0B-DHaDEbiOGkZ1o5VVYwYXVKVjg/view)
+
+
