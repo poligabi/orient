@@ -1,7 +1,12 @@
+#############################
+# Parte 1 - Introdução ao R #
+#############################
 
-#################################
-# Parte 1 Explorando dados no R #
-#################################
+
+
+###############################################
+# Parte 2 - Explorando dados (data frames) no R #
+###############################################
 
 data(iris) #Carrega data.frame
 iris       #Mostra objeto todo (nessa caso o data.frame)
@@ -25,7 +30,7 @@ iris[c1:10,15:20), c(1,5)] #Aqui mostramos linhas 1 a 10, 15 a20 e colunas 1 e 5
 
 
 #################################
-# Parte 2 - Importar dados no R #
+# Parte 3 - Importar dados no R #
 #################################
 
 # Copiar e colar tabela no R:
@@ -36,7 +41,7 @@ x
 
 
 ################################
-## Parte 3 - Graficos simples ## 
+## Parte 4 - Graficos simples ## 
 ################################ 
  
 #-> ggplot2   gg=grammar of graffics (cria uma semantica de graficos)
@@ -65,11 +70,8 @@ legend("topleft", legend=especies,col=cores, pch=16, text.font=3) #legenda das c
 #text.font =tipo de fonte (2=negrito,3=italico,4=negrito e italico)
 
 
-
-
-
 #################################################
-# Parte 4 - Links para ir aprendendo a se virar #
+# Parte 5 - Links para ir aprendendo a se virar #
 #################################################
 
 # Cheat Sheets de R: https://www.rstudio.com/resources/cheatsheets/
