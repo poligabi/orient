@@ -1,12 +1,57 @@
+#################################
+# Introdução a estatística no R #
+# com Poliana Gabriele Lins     #
+#
+#################################
+
 #############################
 # Parte 1 - Introdução ao R #
 #############################
 
+# https://pt.wikibooks.org/wiki/R_(linguagem_de_programa%C3%A7%C3%A3o)/Objetos
+# objeto = qualquer coisa que pode ser associado (e armazenado) em uma variável.
+
+# As variáveis em R não são predefinidas; elas assumem o tipo do objeto que for atribuído a elas.
+# Assim, uma instrução do tipo:
+x <- 1
+# atribui a x o valor (inteiro) 1, e é perfeitamente válido reatribuir:
+x <- 2.5
+x <- NULL
+# Aqui, NULL é a variável vazia. x <- NULL não destrói x (como pode ser visto escrevendo-se exists("x") - que retorna TRUE), 
+## mas faz x ter um valor que não é nada.
+
+# Os principais tipos de objeto são:
+
+# Vetores: uma lista de elementos, sendo todos eles NULL, raw, lógico, inteiro, real, complexo, string, lista ou expressão.
+## Caso a lista seja criada com uma mistura destes tipos, os mais simples serão convertidos para os mais complexos.
+### Função concatenar -> c() -> juntar objetos, e também é usada para criar vetores no R
+x <- c(1, 2, 3) # cria uma variável x do tipo vetor (de inteiros) com três elementos
+x
+x <- c(c(1, 2), c(10, 11)) # concatena (junta) 2 vetores com 2 elementos cada
+x
+
+# Matrizes: semelhante a vetores, mas em duas dimensões.
+
+# Arrays: semelhantes a matrizes, mas podem ter mais dimensões.
+
+# Listas: semelhante a vetores, mas seus elementos podem ser de tipos diferentes - inclusive outras listas.
+
+# Funções: uma função é um objeto como qualquer outro - pode-se inclusive definir funções anônimas, como nas linguagens funcionais.
 
 
-###############################################
+#ctrl R -> executa linha do script e cursor já vai para linha seguinte, 
+# se função tem mais de uma linha precisa selecionar ambas anter de usar crtl R
+
+# Há ainda:
+
+# Fatores: parecido com vetores, mas incluem níveis.
+# Dataframes: semelhante a matriz, mas com alguma estrutura a mais.
+# Classes: usadas na programação orientada a objetos.
+
+
+#################################################
 # Parte 2 - Explorando dados (data frames) no R #
-###############################################
+#################################################
 
 data(iris) #Carrega data.frame
 iris       #Mostra objeto todo (nessa caso o data.frame)
@@ -15,18 +60,15 @@ str(iris)   #Mostra a estrutura do objeto (qnd objeto é muito grande, como na m
 
 
 iris$Sepal.Width   #Mostra só essa coluna
-iris [,2]          #Mostra só essa colun
-iris[10,]		 #Mostra só essa linha
+iris [,2]          #Mostra só essa coluna
+iris[10,]		    #Mostra só essa linha
 iris[1:10,1:2]     #Mostra linha 1 a 10, e colunas 1 e 2
 
 edit(iris) # Abre uma aba com o data frame que pode ser editado
 
-#Função concatenar -> c() -> 
+
 iris[,c(2,4)] #usamos concatenar para mostrar as colunas 2 e 4
 iris[c1:10,15:20), c(1,5)] #Aqui mostramos linhas 1 a 10, 15 a20 e colunas 1 e 5
-
-#ctrl R -> executa linha do script e cursor já vai p seguinte, 
-# se função tem mais de uma linha precisa selecionar ambas anter do crtl R
 
 
 #################################
@@ -77,7 +119,7 @@ legend("topleft", legend=especies,col=cores, pch=16, text.font=3) #legenda das c
 # Cheat Sheets de R: https://www.rstudio.com/resources/cheatsheets/
 
 
-## Para relizar se informar sobre novidades:
+## Para se informar sobre novidades:
 
 # Cantinho do R (blog) : https://cantinhodor.wordpress.com/
 # Laboratório de Ecologia Quantitativa - UFAL : https://www.facebook.com/leq.ufal/
@@ -95,8 +137,9 @@ legend("topleft", legend=especies,col=cores, pch=16, text.font=3) #legenda das c
 
 # Compilador de R : http://rextester.com/l/r_online_compiler
 
-
-[Livro de inferência estatística] (https://leanpub.com/LittleInferenceBook/read) 
-[OpenIntro Statistics Book] (https://drive.google.com/file/d/0B-DHaDEbiOGkZ1o5VVYwYXVKVjg/view)
+## Livros:
+# https://pt.wikibooks.org/wiki/R_(linguagem_de_programa%C3%A7%C3%A3o
+# Livro de inferência estatística: https://leanpub.com/LittleInferenceBook/read 
+# OpenIntro Statistics Book : https://drive.google.com/file/d/0B-DHaDEbiOGkZ1o5VVYwYXVKVjg/view
 
 
